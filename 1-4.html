@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>住友新聞</title>
+
+<style>
+body {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.paper {
+    width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.header {
+    text-align: center;
+    border-bottom: 3px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 42px;
+    letter-spacing: 8px;
+}
+
+/* 検索欄 */
+.search-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.search-box input {
+    padding: 5px;
+    width: 180px;
+}
+
+.search-box button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.date {
+    text-align: right;
+    font-size: 14px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.sub {
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.article {
+    line-height: 2;
+    text-align: justify;
+}
+
+.figure {
+    float: right;
+    width: 300px;
+    margin: 0 0 15px 20px;
+}
+
+.figure img {
+    width: 100%;
+}
+
+.caption {
+    font-size: 12px;
+    color: gray;
+}
+</style>
+
+<script>
+function searchPage() {
+
+    const pages = {
+        "建築工事請負契約書": "1-2.html",
+        "二宮建設株式会社": "1-3.html",
+        "丘の下株式会社": "1-4.html",
+        "鹵獲村": "1-5.html",
+        "二宮琥太郎": "2-1.html",
+        "絢爛の会": "2-2.html",
+        "志村正親": "2-3.html",
+        "勾玉": "2-4.html",
+        "佐藤翔": "2-5.html",
+        "日記": "2-6.html",
+        "神の子":"3-4.html"
+    };
+
+    let keyword = document.getElementById("searchInput").value.trim();
+
+    if (pages[keyword]) {
+        window.location.href = pages[keyword];
+    } else {
+        alert("該当するページが見つかりません");
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="paper">
+
+    <div class="header">
+        <h1>住友新聞</h1>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="検索ワード">
+            <button onclick="searchPage()">検索</button>
+        </div>
+    </div>
+
+    <div class="date">2026年8月8日</div>
+
+    <h2>山間部開発工事で新たな動き</h2>
+    <div class="sub">地域3村に影響、今後の対応が焦点に</div>
+
+    <div class="article">
+
+        <div class="figure">
+            <img src="map.png">
+            <div class="caption">
+                作業地点（×）と周辺の鹵獲村・波風村・吉祥村
+            </div>
+        </div>
+
+        〇〇県北部の山間地域で進められている大規模開発工事について、現地では新たな動きが確認された。
+        本紙の取材によると、作業が行われた地点は周囲を複数の集落に囲まれており、
+        特に鹵獲村、波風村、吉祥村の3地域において影響が広がっている可能性がある。<br><br>
+
+        現場は急峻な山地に位置し、これまで人の出入りが限られていた地域である。
+        しかし、今回の工事により道路整備が進み、重機の搬入が可能となったことで、
+        地形そのものに変化が生じている。<br><br>
+
+        地元住民からは、「これまで静かだった山が急に騒がしくなった」
+        「環境への影響が心配だ」といった声が上がっている。
+        一方で、一部の関係者は「地域活性化につながる可能性もある」として、
+        今後の展開に期待を寄せている。<br><br>
+
+        行政は現在、環境調査および安全確認を進めており、
+        必要に応じて工事の一時停止や計画見直しも検討する方針だ。
+        特に水源や土砂災害リスクへの影響については慎重な分析が求められている。<br><br>
+
+        専門家は「山間部での大規模開発は、短期的な利益だけでなく、
+        長期的な環境バランスを考慮する必要がある」と指摘している。<br><br>
+
+        今後、地域住民・企業・行政の三者による協議が進む見通しであり、
+        この問題がどのような方向に進むのか注目される。
+
+    </div>
+
+</div>
+
+</body>
+</html>

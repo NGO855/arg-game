@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+
+<title>最終判断 ― 証拠を公表するか</title>
+
+<style>
+
+/* =========================
+   全体
+========================= */
+
+body{
+    margin:0;
+    background:#000;
+    color:#00ff66;
+    font-family:"MS Gothic","Yu Gothic",monospace;
+    line-height:2;
+}
+
+/* =========================
+   メイン
+========================= */
+
+.container{
+    width:850px;
+    max-width:90%;
+    margin:80px auto;
+}
+
+/* =========================
+   検索欄
+========================= */
+
+.search-box{
+    position:fixed;
+    top:10px;
+    right:10px;
+
+    background:#000;
+
+    border:1px solid #00ff66;
+
+    padding:8px;
+
+    z-index:1000;
+
+    box-shadow:0 0 10px rgba(0,255,102,0.25);
+}
+
+.search-box input{
+    width:170px;
+
+    padding:6px;
+
+    background:#000;
+
+    color:#00ff66;
+
+    border:1px solid #00ff66;
+
+    outline:none;
+}
+
+.search-box input::placeholder{
+    color:#338844;
+}
+
+.search-box button{
+    padding:6px 10px;
+
+    margin-left:4px;
+
+    background:#001a00;
+
+    color:#00ff66;
+
+    border:1px solid #00ff66;
+
+    cursor:pointer;
+}
+
+.search-box button:hover{
+    background:#003300;
+}
+
+/* =========================
+   タイトル
+========================= */
+
+h1{
+    font-size:30px;
+
+    border-bottom:1px solid #00ff66;
+
+    padding-bottom:12px;
+}
+
+.subtitle{
+    color:#669977;
+    font-size:13px;
+}
+
+/* =========================
+   記録
+========================= */
+
+.record{
+    border:1px solid #006622;
+
+    background:#000800;
+
+    padding:25px;
+
+    margin-top:40px;
+}
+
+/* =========================
+   重要情報
+========================= */
+
+.warning{
+    border:1px solid #00ff66;
+
+    background:#001000;
+
+    padding:20px;
+
+    margin-top:35px;
+}
+
+/* =========================
+   選択画面
+========================= */
+
+.decision{
+
+    margin-top:70px;
+
+    text-align:center;
+
+    border-top:1px solid #006622;
+
+    padding-top:50px;
+
+}
+
+.question{
+
+    font-size:25px;
+
+    margin-bottom:35px;
+
+}
+
+/* =========================
+   ボタン
+========================= */
+
+.choice-button{
+
+    display:inline-block;
+
+    width:180px;
+
+    padding:15px;
+
+    margin:15px;
+
+    border:1px solid #00ff66;
+
+    color:#00ff66;
+
+    background:#000;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:0.3s;
+
+}
+
+.choice-button:hover{
+
+    background:#00ff66;
+
+    color:#000;
+
+}
+
+/* =========================
+   フッター
+========================= */
+
+footer{
+
+    border-top:1px solid #006622;
+
+    margin-top:80px;
+
+    padding-top:20px;
+
+    text-align:center;
+
+    font-size:12px;
+
+    color:#557766;
+
+}
+
+</style>
+
+
+<script>
+
+/* =========================
+   検索機能
+========================= */
+
+function searchPage(){
+
+    const pages = {
+
+        "建築工事請負契約書":"1-2.html",
+
+        "二宮建設株式会社":"1-3.html",
+
+        "丘の下株式会社":"1-4.html",
+
+        "鹵獲村":"1-5.html",
+
+        "二宮琥太郎":"2-1.html",
+
+        "絢爛の会":"2-2.html",
+
+        "志村正親":"2-3.html",
+
+        "勾玉":"2-4.html",
+
+        "佐藤翔":"2-5.html",
+
+        "日記":"2-6.html",
+
+        "神の子":"3-4.html"
+
+    };
+
+
+    const word =
+        document.getElementById("search").value.trim();
+
+
+    if(pages[word]){
+
+        location.href = pages[word];
+
+    }
+    else{
+
+        alert("該当する情報は見つかりませんでした。");
+
+    }
+
+}
+
+
+/* Enterキーでも検索 */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        document
+        .getElementById("search")
+        .addEventListener(
+            "keydown",
+            function(event){
+
+                if(event.key === "Enter"){
+
+                    searchPage();
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     右上固定検索欄
+========================= -->
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="検索ワード"
+    >
+
+    <button onclick="searchPage()">
+        検索
+    </button>
+
+</div>
+
+
+<div class="container">
+
+
+<h1>
+最終判断
+</h1>
+
+<p class="subtitle">
+INVESTIGATION RECORD / DECISION
+</p>
+
+
+<div class="record">
+
+<p>
+あなたはこれまでの調査によって、
+複数の重要な資料を発見した。
+</p>
+
+<p>
+鹵獲村に伝わる「勾玉」の伝承。
+</p>
+
+<p>
+「神の子」と呼ばれていた子供の存在。
+</p>
+
+<p>
+新聞記者・佐藤翔が残した音声記録。
+</p>
+
+<p>
+そして、その子供が残した一冊の日記。
+</p>
+
+<p>
+日記には、
+その子供が後に「二宮琥太郎」という名前を与えられたことが
+記録されていた。
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>あなたが現在持っている証拠</strong>
+
+<br><br>
+
+・建築工事請負契約書<br>
+・丘の下株式会社に関する新聞記事<br>
+・鹵獲村に関する資料<br>
+・勾玉に関する調査記録<br>
+・佐藤翔の音声記録<br>
+・神の子が残した日記
+
+</div>
+
+
+<p>
+これらの資料をつなぎ合わせることで、
+これまで知られていなかった事実が浮かび上がってきた。
+</p>
+
+<p>
+しかし、証拠を公表すれば、
+二宮建設株式会社だけではなく、
+多くの関係者や地域社会にも大きな影響が及ぶ可能性がある。
+</p>
+
+<p>
+一方で、このまま何も公表しなければ、
+これまで明らかになった事実が再び隠されることになる。
+</p>
+
+
+<div class="decision">
+
+<div class="question">
+あなたはこの内容を公表するかどうか選んでください。
+</div>
+
+<p>
+あなたの選択によって、
+この事件の結末が変わります。
+</p>
+
+
+<a
+    href="3-2.html"
+    class="choice-button"
+    onclick="return confirm('この証拠を公表しますか？');"
+>
+はい
+</a>
+
+
+<a
+    href="3-3.html"
+    class="choice-button"
+    onclick="return confirm('証拠を公表せず、このままにしますか？');"
+>
+いいえ
+</a>
+
+</div>
+
+
+<footer>
+
+この物語はフィクションであり、
+実在する人物・団体・事件とは一切関係ありません。
+
+</footer>
+
+
+</div>
+
+</body>
+
+</html>

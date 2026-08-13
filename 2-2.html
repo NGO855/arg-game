@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>絢爛の会</title>
+
+<style>
+body {
+    background-color: #000;
+    color: #00ff66;
+    font-family: "Courier New", monospace;
+}
+
+.container {
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    border-bottom: 1px solid #00ff66;
+}
+
+a {
+    color: #66ff99;
+}
+
+/* 検索 */
+.search-box {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+input, button {
+    background: black;
+    color: #00ff66;
+    border: 1px solid #00ff66;
+    padding: 5px;
+}
+
+/* テーブル */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #00ff66;
+    padding: 8px;
+}
+
+th {
+    background-color: #001a00;
+}
+</style>
+
+<script>
+function searchPage() {
+    const input = document.getElementById("search").value;
+
+    const pages = {
+        "建築工事請負契約書":"1-2.html",
+        "二宮建設株式会社":"1-3.html",
+        "丘の下株式会社":"1-4.html",
+        "鹵獲村":"1-5.html",
+        "二宮琥太郎":"2-1.html",
+        "絢爛の会":"2-2.html",
+        "志村正親":"2-3.html",
+        "勾玉":"2-4.html",
+        "佐藤翔":"2-5.html",
+        "日記":"2-6.html",
+        "神の子":"3-4.html"
+    };
+
+    if (pages[input]) {
+        location.href = pages[input];
+    } else {
+        alert("該当ページがありません");
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="検索">
+    <button onclick="searchPage()">検索</button>
+</div>
+
+<h1>絢爛の会</h1>
+
+<p>
+絢爛の会とは、<a href="2-1.html">二宮琥太郎</a>が主催する招待制の交流会である。
+主に企業経営者、専門職、文化人などが参加している。
+</p>
+
+<h2>概要</h2>
+<p>
+本会は業界を越えたネットワーク形成と情報交換を目的として開催される。
+参加者同士の交流を通じて、新たな事業や共同プロジェクトが生まれることもある。
+</p>
+
+<p>
+開催場所は毎回異なり、参加者のプライバシーに配慮した環境で行われる。
+</p>
+
+<h2>歴史</h2>
+<p>
+二宮建設株式会社の成長期に発足し、
+当初は関係者中心の小規模な会合であった。
+その後、参加者の紹介により規模が拡大し、
+現在では多分野の専門家が集う交流の場となっている。
+</p>
+
+<p>
+過去には、<a href="2-3.html">志村正親</a>（県知事）が招待され、
+講演および意見交換に参加した実績がある。
+</p>
+
+<h2>参加者一覧</h2>
+
+<table>
+<tr>
+<th>名前</th>
+<th>職業</th>
+<th>特徴</th>
+</tr>
+
+<tr><td>天城修一</td><td>投資家</td><td>長期的な資産運用に強み</td></tr>
+<tr><td>黒崎玲子</td><td>医師</td><td>地域医療の発展に貢献</td></tr>
+<tr><td>榊原透</td><td>政治家</td><td>都市政策に関与</td></tr>
+<tr><td>霧島航</td><td>建築士</td><td>環境配慮型設計を得意とする</td></tr>
+<tr><td>藤堂真琴</td><td>作家</td><td>社会テーマの作品で評価</td></tr>
+<tr><td>一ノ瀬蓮</td><td>俳優</td><td>幅広い演技力を持つ</td></tr>
+<tr><td>神代悠</td><td>考古学者</td><td>地域文化研究を専門とする</td></tr>
+<tr><td>桐生亮</td><td>弁護士</td><td>企業法務に精通</td></tr>
+<tr><td>真壁沙織</td><td>研究者</td><td>新技術開発に従事</td></tr>
+<tr><td>橘大和</td><td>実業家</td><td>複数事業を展開</td></tr>
+<tr><td>鷹宮玲</td><td>モデル</td><td>広告業界で活躍</td></tr>
+<tr><td>白石誠</td><td>公務員</td><td>行政業務に従事</td></tr>
+<tr><td>水無瀬葵</td><td>ジャーナリスト</td><td>社会問題の取材を行う</td></tr>
+<tr><td>九条颯</td><td>IT企業CEO</td><td>サービス開発を主導</td></tr>
+<tr><td>御影紗夜</td><td>芸術家</td><td>現代アート分野で活動</td></tr>
+<tr><td>久遠慎</td><td>教育関係者</td><td>人材育成に尽力</td></tr>
+<tr><td>鳳凰院蒼</td><td>大学教授</td><td>研究・教育活動を行う</td></tr>
+<tr><td>鬼塚豪</td><td>スポーツ選手</td><td>国内大会での実績あり</td></tr>
+<tr><td>雨宮灯</td><td>コンサルタント</td><td>企業戦略支援を担当</td></tr>
+<tr>
+<td><a href="2-3.html">志村正親</a></td>
+<td>県知事</td>
+<td>地域政策と産業振興に取り組む行政責任者</td>
+</tr>
+
+</table>
+
+<h2>備考</h2>
+<p>
+本会は交流と協力関係の構築を目的としたものであり、
+特定の思想や団体とは関係がない。
+</p>
+
+</div>
+
+</body>
+</html>

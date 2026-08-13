@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>建築工事請負契約書</title>
+
+<style>
+body{
+  font-family: "MS Mincho", serif;
+  line-height: 1.8;
+  margin: 40px;
+}
+
+h1{
+  text-align:center;
+}
+
+.contract{
+  max-width: 800px;
+  margin:auto;
+}
+
+.search{
+  position:fixed;
+  top:10px;
+  right:10px;
+}
+
+.section{
+  margin-top:20px;
+}
+
+.article{
+  margin-left:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 検索 -->
+<div class="search">
+  <input type="text" id="searchBox" placeholder="検索...">
+  <button onclick="searchPage()">検索</button>
+</div>
+
+<script>
+function searchPage(){
+  const word = document.getElementById("searchBox").value;
+  const map = {
+    "建築工事請負契約書":"1-2.html",
+    "二宮株式会社":"1-3.html",
+    "丘の下株式会社":"1-4.html",
+    "鹵獲村":"1-5.html",
+    "二宮琥太郎":"2-1.html",
+    "絢爛の会":"2-2.html",
+    "志村正親":"2-3.html",
+    "勾玉":"2-4.html",
+    "佐藤翔":"2-5.html",
+    "日記":"2-6.html",
+    "神の子":"3-4.html"
+  };
+
+  if(map[word]){
+    location.href = map[word];
+  } else {
+    alert("該当する情報は見つかりませんでした");
+  }
+}
+</script>
+
+<div class="contract">
+
+<h1>工事請負契約書</h1>
+
+<p>
+注文者 二宮株式会社（以下「注文者」という）と請負人 丘の下株式会社（以下「受注者」という）は、
+本契約書による工事請負契約を締結する。
+</p>
+
+<div class="section">
+<b>第１条（工事の目的物等）</b><br>
+<div class="article">
+１ 工事内容<br>
+２ 工事の目的物：設計図及び仕様書のとおり<br>
+３ 工事場所<br>
+４ 工期：着手 年 月 日 ／ 完成 年 月 日<br>
+５ 施工しない日・時間帯<br>
+６ 引渡し：完成後 日以内<br>
+７ 請負代金額 金 万円<br>
+８ 契約保証金 金 万円
+</div>
+</div>
+
+<div class="section">
+<b>第２条（請負代金の支払方法）</b>
+<div class="article">
+分割払いとし、指定口座へ振込。<br>
+○年○月○日 金 万円<br>
+○年○月○日 金 万円
+</div>
+</div>
+
+<div class="section">
+<b>第３条（原材料の負担）</b>
+<div class="article">
+原材料費は受注者が負担する。
+</div>
+</div>
+
+<div class="section">
+<b>第４条（引渡し及び検査）</b>
+<div class="article">
+引渡し後に検査を実施し、所有権は通知時点で移転する。
+</div>
+</div>
+
+<div class="section">
+<b>第５条（契約不適合責任）</b>
+<div class="article">
+不適合があった場合、補修または損害賠償で対応する。
+</div>
+</div>
+
+<div class="section">
+<b>第６条（危険負担）</b>
+<div class="article">
+所有権移転前の損害は受注者が負担する。
+</div>
+</div>
+
+<div class="section">
+<b>第７条（不可抗力）</b>
+<div class="article">
+自然災害・戦争等による遅延は責任を負わない。
+</div>
+</div>
+
+<div class="section">
+<b>第８条（工期の変更）</b>
+<div class="article">
+不可抗力等の場合、協議により工期変更。
+</div>
+</div>
+
+<div class="section">
+<b>第９条（工事の中止・変更）</b>
+<div class="article">
+注文者は工事変更・中止が可能。
+</div>
+</div>
+
+<div class="section">
+<b>第１０条（損害賠償）</b>
+<div class="article">
+契約違反時は損害賠償責任を負う。
+</div>
+</div>
+
+<div class="section">
+<b>第１５条（契約の解除）</b>
+<div class="article">
+重大違反等の場合、即時解除可能。
+</div>
+</div>
+
+<br><br>
+
+<p>
+以上、本契約の証として本書を作成する。
+</p>
+
+<p>
+注文者：住所・氏名<br>
+受注者：住所・氏名
+</p>
+
+</div>
+
+<footer style="margin-top:50px; font-size:12px;">
+この文書はフィクションです
+</footer>
+
+</body>
+</html>

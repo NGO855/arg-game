@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>二宮琥太郎</title>
+
+<style>
+body {
+    background-color: #000;
+    color: #00ff66;
+    font-family: "Courier New", monospace;
+    margin: 0;
+}
+
+.container {
+    width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    border-bottom: 1px solid #00ff66;
+    padding-bottom: 5px;
+}
+
+h2 {
+    border-bottom: 1px solid #00aa44;
+    margin-top: 30px;
+}
+
+a {
+    color: #66ff99;
+}
+
+/* 検索欄 */
+.search-box {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+input {
+    background: black;
+    color: #00ff66;
+    border: 1px solid #00ff66;
+    padding: 5px;
+}
+
+button {
+    background: black;
+    color: #00ff66;
+    border: 1px solid #00ff66;
+    padding: 5px 10px;
+}
+
+.highlight {
+    color: #ccffcc;
+}
+
+.warning {
+    color: red;
+    font-weight: bold;
+}
+</style>
+
+<script>
+function searchPage() {
+    const input = document.getElementById("search").value;
+
+    const pages = {
+        "建築工事請負契約書":"1-2.html",
+        "二宮建設株式会社":"1-3.html",
+        "丘の下株式会社":"1-4.html",
+        "鹵獲村":"1-5.html",
+        "二宮琥太郎":"2-1.html",
+        "絢爛の会":"2-2.html",
+        "志村正親":"2-3.html",
+        "勾玉":"2-4.html",
+        "佐藤翔":"2-5.html",
+        "日記":"2-6.html",
+        "神の子":"3-4.html"
+    };
+
+    if (pages[input]) {
+        location.href = pages[input];
+    } else {
+        alert("該当ページがありません");
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- 検索欄 -->
+<div class="search-box">
+    <input type="text" id="search" placeholder="検索">
+    <button onclick="searchPage()">検索</button>
+</div>
+
+<h1>二宮琥太郎</h1>
+
+<p>
+二宮琥太郎は、<span class="highlight">二宮建設株式会社の創業者であり社長</span>である。
+同社を一代で築き上げ、急速な成長を実現した人物として知られる。
+</p>
+
+<h2>概要</h2>
+<p>
+起業家としての能力は非常に高く、
+設立当初は小規模であった二宮建設株式会社を短期間で拡大させた。
+特に山間部開発など通常は困難とされる事業においても、
+高い成功率を維持していた点が特徴である。
+</p>
+
+<p>
+その成功は一貫して「偶然」として処理されているが、
+関係者の証言には不可解な一致が見られる。
+</p>
+
+<h2>経歴</h2>
+
+<p><b>20XX年</b><br>
+地方の工業高校を卒業。特定分野において突出した成果を示す。
+</p>
+
+<p><b>20XX+2年</b><br>
+個人事業として建設関連業務を開始。
+後にこれが二宮建設株式会社の前身となる。
+</p>
+
+<p><b>20XX+4年</b><br>
+<span class="highlight">二宮建設株式会社を設立（創業）</span>。
+設立当初から複数の案件を同時に受注。
+</p>
+
+<p><b>20XX+6年</b><br>
+同社社長に就任。企業規模を急速に拡大させる。
+通常では成立し得ない条件の契約を複数締結。
+</p>
+
+<p><b>20XX+7年</b><br>
+著名人・有力者との交流が活発化。
+非公開の集まりとして知られる
+<a href="2-2.html">絢爛の会</a>を主催。
+</p>
+
+<p><b>20XX+8年</b><br>
+<a href="1-5.html">鹵獲村</a>周辺の開発に関与。
+この頃から行動記録に断続的な欠落が確認される。
+</p>
+
+<p><b>20XX+9年</b><br>
+一部関係者が洞穴付近での目撃証言を残す。
+ただし詳細は記録されていない。
+</p>
+
+<p><b class="warning">以降、不明</b></p>
+
+<h2>備考</h2>
+<p>
+<a href="2-4.html">勾玉</a>については、
+鹵獲村周辺の洞穴に放置されていたものであり、
+二宮建設株式会社および同人物との直接的関係は確認されていない。
+</p>
+
+<p>
+ただし、同時期に同地域への出入りが確認されている点から、
+何らかの関連性を指摘する意見も存在する。
+</p>
+
+</div>
+
+</body>
+</html>

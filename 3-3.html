@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>事件の結末 ― 沈黙</title>
+
+<style>
+
+/* =========================
+   全体
+========================= */
+
+body{
+    margin:0;
+    background:#000;
+    color:#00ff66;
+
+    font-family:
+        "MS Gothic",
+        "Yu Gothic",
+        monospace;
+
+    line-height:2;
+}
+
+
+/* =========================
+   メイン
+========================= */
+
+.container{
+
+    width:900px;
+
+    max-width:90%;
+
+    margin:90px auto;
+
+}
+
+
+/* =========================
+   検索欄
+========================= */
+
+.search-box{
+
+    position:fixed;
+
+    top:10px;
+
+    right:10px;
+
+    background:#000;
+
+    border:1px solid #00ff66;
+
+    padding:8px;
+
+    z-index:1000;
+
+    box-shadow:
+        0 0 10px
+        rgba(0,255,102,0.25);
+
+}
+
+
+.search-box input{
+
+    width:180px;
+
+    padding:7px;
+
+    background:#000;
+
+    color:#00ff66;
+
+    border:1px solid #00ff66;
+
+    outline:none;
+
+}
+
+
+.search-box input::placeholder{
+
+    color:#338844;
+
+}
+
+
+.search-box button{
+
+    padding:7px 12px;
+
+    margin-left:4px;
+
+    background:#001a00;
+
+    color:#00ff66;
+
+    border:1px solid #00ff66;
+
+    cursor:pointer;
+
+}
+
+
+.search-box button:hover{
+
+    background:#003300;
+
+}
+
+
+/* =========================
+   タイトル
+========================= */
+
+h1{
+
+    font-size:34px;
+
+    border-bottom:1px solid #00ff66;
+
+    padding-bottom:12px;
+
+}
+
+
+.subtitle{
+
+    color:#669977;
+
+    font-size:13px;
+
+}
+
+
+/* =========================
+   エンディング
+========================= */
+
+.ending{
+
+    margin-top:40px;
+
+    border:1px solid #00ff66;
+
+    background:#001000;
+
+    padding:30px;
+
+    text-align:center;
+
+    font-size:21px;
+
+}
+
+
+.ending-title{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =========================
+   本文
+========================= */
+
+.story{
+
+    margin-top:45px;
+
+    padding:30px;
+
+    border-left:1px solid #006622;
+
+    border-right:1px solid #006622;
+
+    background:#000500;
+
+}
+
+
+.story p{
+
+    margin:28px 0;
+
+}
+
+
+/* =========================
+   強調
+========================= */
+
+.highlight{
+
+    border-left:4px solid #00ff66;
+
+    background:#001000;
+
+    padding:20px;
+
+    margin:35px 0;
+
+}
+
+
+.whisper{
+
+    color:#669977;
+
+    font-style:italic;
+
+}
+
+
+/* =========================
+   墓の場面
+========================= */
+
+.grave-scene{
+
+    margin-top:60px;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    border-top:1px solid #006622;
+
+    border-bottom:1px solid #006622;
+
+}
+
+
+.grave{
+
+    margin:30px auto;
+
+    width:250px;
+
+    padding:30px 15px;
+
+    border:1px solid #335544;
+
+    color:#557766;
+
+}
+
+
+.grave-name{
+
+    font-size:23px;
+
+    color:#779988;
+
+}
+
+
+/* =========================
+   最終メッセージ
+========================= */
+
+.final{
+
+    margin-top:70px;
+
+    text-align:center;
+
+    padding:35px;
+
+    border:1px dashed #006622;
+
+}
+
+
+.final strong{
+
+    font-size:22px;
+
+}
+
+
+/* =========================
+   フッター
+========================= */
+
+footer{
+
+    margin-top:80px;
+
+    padding-top:20px;
+
+    border-top:1px solid #006622;
+
+    text-align:center;
+
+    color:#557766;
+
+    font-size:12px;
+
+}
+
+</style>
+
+
+<script>
+
+/* =========================
+   検索機能
+========================= */
+
+function searchPage(){
+
+    const pages = {
+
+        "建築工事請負契約書":"1-2.html",
+
+        "二宮建設株式会社":"1-3.html",
+
+        "丘の下株式会社":"1-4.html",
+
+        "鹵獲村":"1-5.html",
+
+        "二宮琥太郎":"2-1.html",
+
+        "絢爛の会":"2-2.html",
+
+        "志村正親":"2-3.html",
+
+        "勾玉":"2-4.html",
+
+        "佐藤翔":"2-5.html",
+
+        "日記":"2-6.html",
+
+        "神の子":"3-4.html"
+
+    };
+
+
+    const word =
+        document
+        .getElementById("search")
+        .value
+        .trim();
+
+
+    if(pages[word]){
+
+        location.href =
+            pages[word];
+
+    }
+
+    else{
+
+        alert(
+            "該当する情報は見つかりませんでした。"
+        );
+
+    }
+
+}
+
+
+/* =========================
+   Enterキー
+========================= */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    function(){
+
+        document
+        .getElementById("search")
+        .addEventListener(
+
+            "keydown",
+
+            function(event){
+
+                if(event.key === "Enter"){
+
+                    searchPage();
+
+                }
+
+            }
+
+        );
+
+    }
+
+);
+
+</script>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     固定検索欄
+========================= -->
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="検索ワード"
+    >
+
+    <button onclick="searchPage()">
+        検索
+    </button>
+
+</div>
+
+
+
+<div class="container">
+
+
+<h1>
+事件の結末
+</h1>
+
+<p class="subtitle">
+FINAL REPORT / SILENCE
+</p>
+
+
+<!-- =========================
+     エンディング
+========================= -->
+
+<div class="ending">
+
+<div class="ending-title">
+沈黙
+</div>
+
+<p>
+あなたは、証拠を公表しないことを選んだ。
+</p>
+
+</div>
+
+
+
+<div class="story">
+
+
+<p>
+
+あなたは手元にある資料を閉じた。
+</p>
+
+
+<p>
+
+建築工事請負契約書。
+</p>
+
+<p>
+
+佐藤翔が残した音声記録。
+</p>
+
+<p>
+
+「神の子」と呼ばれた子供の日記。
+</p>
+
+<p>
+
+それらをつなぎ合わせれば、
+事件の真相に近づくことはできた。
+</p>
+
+
+<p>
+
+しかし、それを公表することはしなかった。
+</p>
+
+
+<p>
+
+理由は一つではない。
+</p>
+
+
+<p>
+
+証拠が完全ではなかったからかもしれない。
+</p>
+
+<p>
+
+公表することで、
+さらに多くの人間が巻き込まれることを恐れたのかもしれない。
+</p>
+
+<p>
+
+あるいは、
+あなた自身が真実を公にすることを
+ためらったのかもしれない。
+</p>
+
+
+<div class="highlight">
+
+<p>
+だが、あなたが沈黙したことで、
+事件は終わったわけではなかった。
+</p>
+
+</div>
+
+
+<p>
+
+二宮建設株式会社への調査は
+大きく進展することなく、
+テーマパーク開発計画もそのまま進められることになった。
+</p>
+
+
+<p>
+
+行政側からも、
+大きな問題は確認されなかったという発表が出された。
+</p>
+
+
+<p>
+
+そして、二宮琥太郎は、
+これまでと変わらず会社の代表として活動を続けた。
+</p>
+
+
+<p>
+
+表向きには、
+何も変わっていない。
+</p>
+
+
+<p>
+
+しかし――
+</p>
+
+
+<p>
+
+二宮だけは知っていた。
+</p>
+
+
+<p>
+
+自分の過去を知る人間が、
+確かに存在していたことを。
+</p>
+
+
+<p>
+
+佐藤翔。
+</p>
+
+
+<p>
+
+彼はかつて、
+一人の子供を救った。
+</p>
+
+
+<p>
+
+そして、その子供が誰なのかを
+知っていた。
+</p>
+
+
+<p>
+
+その子供が、
+現在の二宮琥太郎であることも。
+</p>
+
+
+
+<div class="highlight">
+
+<p>
+佐藤翔が残した記録は、
+世間には公表されなかった。
+</p>
+
+<p>
+しかし、その記録を読んだ人間が
+一人だけいた。
+</p>
+
+<p>
+――二宮琥太郎だった。
+</p>
+
+</div>
+
+
+<p>
+
+二宮は、
+自分がかつて救われたことを知った。
+</p>
+
+
+<p>
+
+そして同時に、
+自分の過去を追い続けていた人物が
+誰だったのかを知った。
+</p>
+
+
+<p>
+
+それから数日後。
+</p>
+
+
+<p>
+
+二宮は一人で、
+ある場所を訪れた。
+</p>
+
+</div>
+
+
+
+<!-- =========================
+     墓の場面
+========================= -->
+
+<div class="grave-scene">
+
+
+<p class="whisper">
+数日後――
+</p>
+
+
+<div class="grave">
+
+<div class="grave-name">
+佐藤翔
+</div>
+
+<p>
+眠る場所
+</p>
+
+</div>
+
+
+<p>
+
+雨が降っていた。
+</p>
+
+
+<p>
+
+二宮は、
+墓の前に立っていた。
+</p>
+
+
+<p>
+
+花を持ってきたわけでもない。
+</p>
+
+
+<p>
+
+誰かに見せるためでもない。
+</p>
+
+
+<p>
+
+ただ、
+そこに立っていた。
+</p>
+
+
+<p>
+
+しばらく何も言わなかった。
+</p>
+
+
+<p>
+
+やがて二宮は、
+小さな声で呟いた。
+</p>
+
+
+<p>
+「……あんたは、最後まで余計なことをする人だったな。」
+</p>
+
+
+<p>
+「俺を助けて……」
+</p>
+
+
+<p>
+「そのあとも、ずっと調べ続けて……」
+</p>
+
+
+<p>
+「どうしてそこまでしたんだ。」
+</p>
+
+
+<p>
+
+返事はない。
+</p>
+
+
+<p>
+
+雨の音だけが続いていた。
+</p>
+
+
+<p>
+
+二宮は墓を見つめたまま、
+静かに目を閉じた。
+</p>
+
+
+<p>
+「……俺は、あのときのことを覚えてない。」
+</p>
+
+
+<p>
+「でも、あんたが残したものは覚えてる。」
+</p>
+
+
+<p>
+
+少しだけ間を置いて、
+二宮は続けた。
+</p>
+
+
+<p>
+「これで終わりだ。」
+</p>
+
+
+<p>
+「もう誰にも邪魔はさせない。」
+</p>
+
+
+<p>
+
+二宮は墓に背を向けた。
+</p>
+
+
+<p>
+
+そして、その場を後にした。
+</p>
+
+
+<p class="whisper">
+雨は、しばらく降り続いていた。
+</p>
+
+
+</div>
+
+
+
+<!-- =========================
+     最終結末
+========================= -->
+
+<div class="final">
+
+
+<p>
+
+事件の真相は、
+公表されなかった。
+</p>
+
+
+<p>
+
+証拠は再び闇の中へ戻った。
+</p>
+
+
+<p>
+
+二宮琥太郎は、
+自らの目的を果たした。
+</p>
+
+
+<p>
+
+そして、
+佐藤翔の墓の前で
+一人、過去に思いをはせた。
+</p>
+
+
+<br>
+
+
+<p>
+
+<strong>
+あなたが選んだ「沈黙」が、
+この結末を生んだ。
+</strong>
+
+</p>
+
+
+<br>
+
+
+<p class="whisper">
+
+――事件は、解決したのだろうか。
+
+</p>
+
+
+</div>
+
+
+
+<footer>
+
+この物語はフィクションであり、
+実在する人物・団体・事件とは一切関係ありません。
+
+</footer>
+
+
+</div>
+
+</body>
+
+</html>

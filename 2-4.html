@@ -1,0 +1,416 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<title>勾玉 ― 鹵獲村に伝わる伝承</title>
+
+<style>
+
+body{
+    background:#000;
+    color:#00ff66;
+    font-family:"MS Gothic","Yu Gothic",monospace;
+    margin:0;
+    line-height:1.9;
+}
+
+/* 全体 */
+.container{
+    width:900px;
+    max-width:90%;
+    margin:70px auto 80px;
+}
+
+/* 検索欄 */
+.search-box{
+    position:fixed;
+    top:10px;
+    right:10px;
+    z-index:1000;
+    background:#000;
+    border:1px solid #00ff66;
+    padding:8px;
+    box-shadow:0 0 10px rgba(0,255,102,0.25);
+}
+
+.search-box input{
+    width:170px;
+    padding:6px;
+    background:#000;
+    color:#00ff66;
+    border:1px solid #00ff66;
+    outline:none;
+}
+
+.search-box button{
+    padding:6px 10px;
+    margin-left:4px;
+    background:#001a00;
+    color:#00ff66;
+    border:1px solid #00ff66;
+    cursor:pointer;
+}
+
+.search-box button:hover{
+    background:#003300;
+}
+
+/* タイトル */
+h1{
+    font-size:32px;
+    border-bottom:1px solid #00ff66;
+    padding-bottom:10px;
+}
+
+.subtitle{
+    color:#66ff99;
+    font-size:14px;
+}
+
+/* 見出し */
+h2{
+    font-size:22px;
+    margin-top:45px;
+    border-left:5px solid #00ff66;
+    padding-left:12px;
+}
+
+/* 引用 */
+.quote{
+    border-left:3px solid #008833;
+    padding:15px 20px;
+    margin:25px 0;
+    color:#99ffaa;
+    background:#001000;
+}
+
+/* 情報ボックス */
+.info{
+    border:1px solid #008833;
+    padding:20px;
+    margin:25px 0;
+    background:#001000;
+}
+
+.info-title{
+    color:#66ff99;
+    font-weight:bold;
+}
+
+/* 強調 */
+.warning{
+    color:#00ff66;
+    border:1px solid #00ff66;
+    padding:15px;
+    margin-top:30px;
+}
+
+/* リンク */
+a{
+    color:#66ff99;
+    text-decoration:none;
+}
+
+a:hover{
+    color:white;
+    text-decoration:underline;
+}
+
+/* フッター */
+footer{
+    border-top:1px solid #006622;
+    margin-top:60px;
+    padding-top:20px;
+    font-size:12px;
+    color:#669977;
+    text-align:center;
+}
+
+</style>
+
+<script>
+
+function searchPage(){
+
+    const pages = {
+        "建築工事請負契約書":"1-2.html",
+        "二宮建設株式会社":"1-3.html",
+        "丘の下株式会社":"1-4.html",
+        "鹵獲村":"1-5.html",
+        "二宮琥太郎":"2-1.html",
+        "絢爛の会":"2-2.html",
+        "志村正親":"2-3.html",
+        "勾玉":"2-4.html",
+        "佐藤翔":"2-5.html",
+        "日記":"2-6.html",
+        "神の子":"3-4.html"
+    };
+
+    const word =
+        document.getElementById("search").value.trim();
+
+    if(pages[word]){
+        location.href = pages[word];
+    }
+    else{
+        alert("該当する情報は見つかりませんでした。");
+    }
+}
+
+/* Enterキーでも検索 */
+document.addEventListener("DOMContentLoaded", function(){
+
+    document.getElementById("search")
+    .addEventListener("keydown", function(event){
+
+        if(event.key === "Enter"){
+            searchPage();
+        }
+
+    });
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<!-- =========================
+     固定検索欄
+========================= -->
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="検索ワード"
+    >
+
+    <button onclick="searchPage()">
+        検索
+    </button>
+
+</div>
+
+
+<div class="container">
+
+<h1>勾玉</h1>
+
+<p class="subtitle">
+― 鹵獲村に伝わる古い伝承について ―
+</p>
+
+
+<div class="info">
+
+<div class="info-title">
+資料分類
+</div>
+
+民俗資料・地域伝承に関する記録
+
+<br><br>
+
+<div class="info-title">
+調査地域
+</div>
+
+鹵獲村周辺
+
+<br><br>
+
+<div class="info-title">
+主な調査者
+</div>
+
+新聞記者・佐藤翔
+
+</div>
+
+
+<h2>概要</h2>
+
+<p>
+鹵獲村には、古くから「勾玉」にまつわる伝承が残されている。
+</p>
+
+<p>
+村に伝わる話によれば、山中に存在する洞穴の奥には、
+非常に古い勾玉が置かれているとされる。
+この勾玉は通常の装飾品とは異なる特別な力を持つとされ、
+古くから村人によって大切に扱われてきたという。
+</p>
+
+<p>
+ただし、勾玉そのものが実際にどの時代に作られたものなのか、
+誰によって洞穴へ持ち込まれたのかについては、
+現在まで明確な記録が残されていない。
+</p>
+
+
+<h2>鹵獲村に伝わる伝承</h2>
+
+<p>
+村に伝わる伝承では、勾玉の前で「神の子」と呼ばれる子供が
+祈りを捧げることで、未来を見ることができるとされている。
+</p>
+
+<p>
+そのため、かつての鹵獲村では特定の子供を「神の子」として扱い、
+洞穴へ連れて行く風習が存在したと伝えられている。
+</p>
+
+<p>
+しかし、これらの話がいつから始まったものなのかは分かっていない。
+また、実際に未来を予知できたという記録についても、
+客観的な証拠は確認されていない。
+</p>
+
+<div class="quote">
+
+「山の奥には、昔から触れてはいけないものがある。」
+
+<br>
+
+― 鹵獲村に残る古い言い伝え
+
+</div>
+
+
+<h2>勾玉の特徴</h2>
+
+<p>
+伝承に登場する勾玉は、一般的な装飾品として知られる勾玉とは
+異なる特徴を持つとされる。
+</p>
+
+<p>
+特に特徴的なのは、その表面に確認できる独特の模様である。
+村人の証言によれば、光の当たり方によって模様が変化して
+見えることがあるという。
+</p>
+
+<p>
+また、長期間にわたって洞穴の中に置かれているにもかかわらず、
+大きな損傷が確認されていないとも伝えられている。
+</p>
+
+
+<h2>「神の子」と勾玉</h2>
+
+<p>
+伝承では、勾玉の力を利用するためには、
+「神の子」と呼ばれる特定の子供が必要だとされている。
+</p>
+
+<p>
+村の古い記録には、一定の期間ごとに子供が
+「神の子」として選ばれていたことを示唆する記述がある。
+</p>
+
+<p>
+しかし、その子供たちがどこから来たのかについては、
+記録によって内容が異なっている。
+</p>
+
+<p>
+一部の古い資料では、村の外から来た子供を
+「神の子」として扱っていた可能性も指摘されている。
+</p>
+
+
+<h2>勾玉に関する異説</h2>
+
+<p>
+勾玉については、単なる村の伝承にすぎないという見方が一般的である。
+一方で、地域史を研究する一部の人物からは、
+何らかの古代遺物が伝承のモデルになった可能性も指摘されている。
+</p>
+
+<p>
+ただし、現在確認されている資料だけでは、
+伝承に登場する勾玉と実際の遺物を結びつけることはできない。
+</p>
+
+
+<h2>佐藤翔による調査</h2>
+
+<p>
+この伝承について詳しく調査した人物として、
+新聞記者の<a href="2-5.html">佐藤翔</a>の名前が挙げられている。
+</p>
+
+<p>
+佐藤は鹵獲村周辺で複数の住民から聞き取りを行い、
+村に残る古い記録や伝承について調査していたとされる。
+</p>
+
+<p>
+特に佐藤が注目したのは、
+「神の子」と呼ばれていた子供に関する記録であった。
+</p>
+
+<p>
+佐藤が残したとされる資料には、
+勾玉の存在だけではなく、
+神の子に関する情報を記録した音声データが存在するとされている。
+</p>
+
+<div class="warning">
+
+※佐藤翔が残した調査資料の一部は現在確認できない。
+
+<br>
+
+※一部資料については所在不明となっている。
+
+</div>
+
+
+<h2>現在の状況</h2>
+
+<p>
+勾玉が存在するとされる洞穴は、
+現在も山間部の一角に残されているとされる。
+</p>
+
+<p>
+ただし、正確な場所については公にはされていない。
+また、近年の山間部開発に伴い、
+周辺地域の地形が大きく変化していることから、
+洞穴そのものの状況についても確認が必要とされている。
+</p>
+
+
+<h2>調査資料</h2>
+
+<p>
+佐藤翔が残したとされる記録については、
+別の資料によりさらに詳しい内容を確認することができる。
+</p>
+
+<p>
+<a href="2-5.html">
+→ 佐藤翔に関する記録を見る
+</a>
+</p>
+
+
+<footer>
+
+この物語はフィクションであり、
+実在する人物・団体・地域・事件とは一切関係ありません。
+
+</footer>
+
+</div>
+
+</body>
+</html>
+```

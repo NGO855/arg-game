@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+
+<title>日記 ― 記録資料</title>
+
+<style>
+
+/* =========================
+   全体
+========================= */
+
+body{
+    margin:0;
+    background:#000;
+    color:#00ff66;
+    font-family:"MS Gothic","Yu Gothic",monospace;
+    line-height:2;
+}
+
+/* =========================
+   メイン
+========================= */
+
+.container{
+    width:850px;
+    max-width:90%;
+    margin:80px auto;
+}
+
+/* =========================
+   検索欄
+========================= */
+
+.search-box{
+    position:fixed;
+    top:10px;
+    right:10px;
+
+    background:#000;
+
+    border:1px solid #00ff66;
+
+    padding:8px;
+
+    z-index:1000;
+
+    box-shadow:0 0 10px rgba(0,255,102,0.25);
+}
+
+.search-box input{
+    width:170px;
+
+    padding:6px;
+
+    background:#000;
+
+    color:#00ff66;
+
+    border:1px solid #00ff66;
+
+    outline:none;
+}
+
+.search-box input::placeholder{
+    color:#338844;
+}
+
+.search-box button{
+    padding:6px 10px;
+
+    margin-left:4px;
+
+    background:#001a00;
+
+    color:#00ff66;
+
+    border:1px solid #00ff66;
+
+    cursor:pointer;
+}
+
+.search-box button:hover{
+    background:#003300;
+}
+
+/* =========================
+   タイトル
+========================= */
+
+h1{
+    font-size:32px;
+
+    border-bottom:1px solid #00ff66;
+
+    padding-bottom:10px;
+}
+
+.subtitle{
+    font-size:13px;
+    color:#669977;
+}
+
+/* =========================
+   日記ページ
+========================= */
+
+.diary-page{
+
+    background:#050505;
+
+    border:1px solid #006622;
+
+    padding:45px;
+
+    margin-top:40px;
+
+    min-height:500px;
+
+    box-shadow:
+        0 0 20px rgba(0,255,102,0.05);
+
+}
+
+/* 紙の端 */
+
+.page-number{
+
+    text-align:right;
+
+    color:#337744;
+
+    font-size:13px;
+
+    margin-bottom:30px;
+}
+
+/* 日記本文 */
+
+.diary-text{
+
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+
+    color:#99ffaa;
+
+    font-size:17px;
+
+    letter-spacing:1px;
+}
+
+/* =========================
+   特殊表示
+========================= */
+
+.secret{
+    color:#00ff66;
+    font-weight:bold;
+}
+
+.blackout{
+    background:#000;
+    color:#000;
+    border:1px solid #111;
+    padding:0 5px;
+}
+
+.blackout:hover{
+    color:#111;
+}
+
+/* =========================
+   区切り
+========================= */
+
+.divider{
+
+    border-top:1px dashed #006622;
+
+    margin:50px 0;
+
+}
+
+/* =========================
+   選択
+========================= */
+
+.choice{
+
+    margin-top:70px;
+
+    padding:30px;
+
+    border:1px solid #00ff66;
+
+    text-align:center;
+
+    background:#001000;
+}
+
+.choice-title{
+
+    font-size:22px;
+
+    margin-bottom:25px;
+
+}
+
+.choice-button{
+
+    display:inline-block;
+
+    padding:12px 30px;
+
+    margin:10px;
+
+    border:1px solid #00ff66;
+
+    color:#00ff66;
+
+    text-decoration:none;
+
+    background:#000;
+
+    transition:0.2s;
+
+}
+
+.choice-button:hover{
+
+    background:#00ff66;
+
+    color:#000;
+
+}
+
+/* =========================
+   フッター
+========================= */
+
+footer{
+
+    border-top:1px solid #006622;
+
+    margin-top:80px;
+
+    padding-top:20px;
+
+    text-align:center;
+
+    font-size:12px;
+
+    color:#557766;
+
+}
+
+</style>
+
+
+<script>
+
+/* =========================
+   検索機能
+========================= */
+
+function searchPage(){
+
+    const pages = {
+
+        "建築工事請負契約書":"1-2.html",
+
+        "二宮建設株式会社":"1-3.html",
+
+        "丘の下株式会社":"1-4.html",
+
+        "鹵獲村":"1-5.html",
+
+        "二宮琥太郎":"2-1.html",
+
+        "絢爛の会":"2-2.html",
+
+        "志村正親":"2-3.html",
+
+        "勾玉":"2-4.html",
+
+        "佐藤翔":"2-5.html",
+
+        "日記":"2-6.html",
+
+        "神の子":"3-4.html"
+
+    };
+
+
+    const word =
+        document.getElementById("search").value.trim();
+
+
+    if(pages[word]){
+
+        location.href = pages[word];
+
+    }
+    else{
+
+        alert("該当する情報は見つかりませんでした。");
+
+    }
+
+}
+
+
+/* Enterキーで検索 */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        document
+        .getElementById("search")
+        .addEventListener(
+            "keydown",
+            function(event){
+
+                if(event.key === "Enter"){
+
+                    searchPage();
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     右上固定検索欄
+========================= -->
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="検索ワード"
+    >
+
+    <button onclick="searchPage()">
+        検索
+    </button>
+
+</div>
+
+
+<div class="container">
+
+
+<h1>日記</h1>
+
+<p class="subtitle">
+発見資料 / PERSONAL DIARY / DOCUMENT No.06
+</p>
+
+
+<p>
+以下は、新聞記者・佐藤翔が保護した子供が所持していたとされる
+日記の一部を記録したものである。
+</p>
+
+<p>
+原本は非常に古く、一部のページには破損や汚れが確認されている。
+以下の文章は判読可能な部分を可能な限りそのまま記録した。
+</p>
+
+
+<!-- =========================
+     1ページ目
+========================= -->
+
+<div class="diary-page">
+
+<div class="page-number">
+1ページ目
+</div>
+
+<div class="diary-text">
+
+<p>
+きょうは、知らない人に連れていかれた。
+</p>
+
+<p>
+山の中を歩いた。
+</p>
+
+<p>
+ずっと歩いていたから、足が痛かった。
+</p>
+
+<p>
+どこへ行くのか聞いても、
+だれも答えてくれなかった。
+</p>
+
+<p>
+暗くなってから、知らない場所についた。
+</p>
+
+<p>
+そこには大人の人が何人もいた。
+</p>
+
+<p>
+みんながぼくのことを
+「神の子」と呼んでいた。
+</p>
+
+<p>
+ぼくは神様じゃない。
+</p>
+
+<p>
+どうしてそんな名前で呼ぶのか分からない。
+</p>
+
+<p>
+怖かった。
+</p>
+
+<p>
+そのあと、山の奥にある洞穴へ連れていかれた。
+</p>
+
+<p>
+洞穴の中には、
+変な形をした石が置いてあった。
+</p>
+
+<p>
+それが「勾玉」だと教えられた。
+</p>
+
+<p>
+大人たちは、
+ぼくが勾玉に祈れば未来が見えると言った。
+</p>
+
+<p>
+でも、ぼくには何も見えなかった。
+</p>
+
+<p>
+ただ、暗い洞穴の中で、
+ずっと怖い気持ちになった。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     2ページ目
+========================= -->
+
+<div class="diary-page">
+
+<div class="page-number">
+2ページ目
+</div>
+
+<div class="diary-text">
+
+<p>
+今日は知らない人が来た。
+</p>
+
+<p>
+昨日までいた大人たちとは違う人だった。
+</p>
+
+<p>
+その人は、ぼくを見て、
+「大丈夫だ」と言った。
+</p>
+
+<p>
+最初は信じられなかった。
+</p>
+
+<p>
+でも、その人はぼくを洞穴から連れ出した。
+</p>
+
+<p>
+山を下りて、
+知らない家に連れていってくれた。
+</p>
+
+<p>
+そこには温かいご飯があった。
+</p>
+
+<p>
+久しぶりに温かいご飯を食べた。
+</p>
+
+<p>
+ご飯を食べていると、
+その人が何も聞かずに待っていてくれた。
+</p>
+
+<p>
+「ゆっくり食べていい」
+</p>
+
+<p>
+そう言ってくれた。
+</p>
+
+<p>
+ぼくは、その言葉を聞いて泣いた。
+</p>
+
+<p>
+どうして泣いたのかは分からない。
+</p>
+
+<p>
+でも、怖くなかった。
+</p>
+
+<p>
+この人なら大丈夫なのかもしれないと思った。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     3ページ目
+========================= -->
+
+<div class="diary-page">
+
+<div class="page-number">
+3ページ目
+</div>
+
+<div class="diary-text">
+
+<p>
+今日、新しい名前をもらった。
+</p>
+
+<p>
+今まで、ぼくにはちゃんとした名前がなかった。
+</p>
+
+<p>
+大人たちはずっと、
+ぼくのことを「神の子」と呼んでいた。
+</p>
+
+<p>
+でも、それは名前じゃない。
+</p>
+
+<p>
+今日、助けてくれた人が、
+ぼくに名前をくれた。
+</p>
+
+<p>
+その人は、
+「今日から君は、この名前で生きればいい」
+と言った。
+</p>
+
+<p class="secret">
+二宮琥太郎
+</p>
+
+<p>
+それが、ぼくの新しい名前。
+</p>
+
+<p>
+二宮琥太郎。
+</p>
+
+<p>
+何度も書いてみた。
+</p>
+
+<p>
+二宮琥太郎。
+</p>
+
+<p>
+二宮琥太郎。
+</p>
+
+<p>
+この名前を忘れないように、
+ここに書いておく。
+</p>
+
+<p>
+いつか大きくなったら、
+自分がどこから来たのか調べたい。
+</p>
+
+<p>
+あの洞穴のことも。
+</p>
+
+<p>
+勾玉のことも。
+</p>
+
+<p>
+そして、
+ぼくを「神の子」と呼んだ人たちのことも。
+</p>
+
+<p>
+でも今は、
+この家にいられるだけで嬉しい。
+</p>
+
+<p>
+今日も温かいご飯を食べた。
+</p>
+
+<p>
+明日もここにいられますように。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     日記について
+========================= -->
+
+<div class="divider"></div>
+
+
+<h2>資料について</h2>
+
+<p>
+この日記は、佐藤翔が保護した子供が所持していたものである。
+</p>
+
+<p>
+記録によれば、子供は鹵獲村周辺で保護され、
+その後、佐藤の遠縁にあたる人物に預けられたとされている。
+</p>
+
+<p>
+日記の3ページ目には、
+「二宮琥太郎」という名前が記されている。
+</p>
+
+<p>
+現在の二宮琥太郎について確認されている経歴では、
+6歳以前の記録がほとんど存在しない。
+</p>
+
+<p>
+この日記に記された内容が事実であるならば、
+二宮琥太郎の幼少期について、
+これまで知られていなかった事実が存在する可能性がある。
+</p>
+
+
+<div class="choice">
+
+<div class="choice-title">
+あなたの決断は？
+</div>
+
+<p>
+この記録を発見したあなたは、
+ここに記された事実を公表しますか？
+</p>
+
+
+<a
+    href="3-1.html"
+    class="choice-button"
+>
+調査を続ける
+</a>
+
+</div>
+
+
+<footer>
+
+この物語はフィクションであり、
+実在する人物・団体・事件とは一切関係ありません。
+
+</footer>
+
+
+</div>
+
+</body>
+
+</html>

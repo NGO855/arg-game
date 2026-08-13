@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>神の子 ― 未公開音声記録</title>
+
+
+<style>
+
+/* =========================
+   全体
+========================= */
+
+body{
+    margin:0;
+    background:#000;
+    color:#00ff66;
+
+    font-family:
+        "MS Gothic",
+        "Yu Gothic",
+        monospace;
+
+    line-height:2;
+}
+
+
+/* =========================
+   メイン
+========================= */
+
+.container{
+
+    width:900px;
+
+    max-width:90%;
+
+    margin:90px auto;
+
+}
+
+
+/* =========================
+   検索欄
+========================= */
+
+.search-box{
+
+    position:fixed;
+
+    top:10px;
+
+    right:10px;
+
+    background:#000;
+
+    border:1px solid #00ff66;
+
+    padding:8px;
+
+    z-index:1000;
+
+    box-shadow:
+        0 0 10px
+        rgba(0,255,102,0.25);
+
+}
+
+
+.search-box input{
+
+    width:180px;
+
+    padding:7px;
+
+    background:#000;
+
+    color:#00ff66;
+
+    border:1px solid #00ff66;
+
+    outline:none;
+
+}
+
+
+.search-box input::placeholder{
+
+    color:#338844;
+
+}
+
+
+.search-box button{
+
+    padding:7px 12px;
+
+    margin-left:4px;
+
+    background:#001a00;
+
+    color:#00ff66;
+
+    border:1px solid #00ff66;
+
+    cursor:pointer;
+
+}
+
+
+.search-box button:hover{
+
+    background:#003300;
+
+}
+
+
+/* =========================
+   タイトル
+========================= */
+
+h1{
+
+    font-size:32px;
+
+    border-bottom:1px solid #00ff66;
+
+    padding-bottom:12px;
+
+}
+
+
+.subtitle{
+
+    color:#669977;
+
+    font-size:13px;
+
+}
+
+
+/* =========================
+   記録情報
+========================= */
+
+.record-info{
+
+    border:1px solid #006622;
+
+    background:#000b00;
+
+    padding:20px;
+
+    margin-top:35px;
+
+}
+
+
+.record-info span{
+
+    color:#66ff99;
+
+}
+
+
+/* =========================
+   音声記録
+========================= */
+
+.audio-record{
+
+    margin-top:40px;
+
+    border:1px solid #006622;
+
+    background:#000700;
+
+    padding:35px;
+
+}
+
+
+.noise{
+
+    color:#557766;
+
+}
+
+
+.village{
+
+    color:#99ffaa;
+
+}
+
+
+.sato{
+
+    color:#66ff99;
+
+}
+
+
+.warning{
+
+    color:#00ff66;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================
+   強調部分
+========================= */
+
+.highlight{
+
+    border-left:4px solid #00ff66;
+
+    padding-left:15px;
+
+    margin:30px 0;
+
+    background:#001000;
+
+}
+
+
+/* =========================
+   調査結果
+========================= */
+
+.analysis{
+
+    margin-top:50px;
+
+    border:1px solid #00ff66;
+
+    padding:25px;
+
+    background:#001000;
+
+}
+
+
+.analysis h2{
+
+    margin-top:0;
+
+}
+
+
+/* =========================
+   次の手がかり
+========================= */
+
+.clue{
+
+    margin-top:50px;
+
+    padding:20px;
+
+    border:1px dashed #006622;
+
+}
+
+
+/* =========================
+   フッター
+========================= */
+
+footer{
+
+    margin-top:80px;
+
+    padding-top:20px;
+
+    border-top:1px solid #006622;
+
+    text-align:center;
+
+    color:#557766;
+
+    font-size:12px;
+
+}
+
+</style>
+
+
+<script>
+
+/* =========================
+   検索機能
+========================= */
+
+function searchPage(){
+
+    const pages = {
+
+        "建築工事請負契約書":"1-2.html",
+
+        "二宮建設株式会社":"1-3.html",
+
+        "丘の下株式会社":"1-4.html",
+
+        "鹵獲村":"1-5.html",
+
+        "二宮琥太郎":"2-1.html",
+
+        "絢爛の会":"2-2.html",
+
+        "志村正親":"2-3.html",
+
+        "勾玉":"2-4.html",
+
+        "佐藤翔":"2-5.html",
+
+        "日記":"2-6.html",
+
+        "神の子":"3-4.html"
+
+    };
+
+
+    const word =
+        document
+        .getElementById("search")
+        .value
+        .trim();
+
+
+    if(pages[word]){
+
+        location.href =
+            pages[word];
+
+    }
+
+    else{
+
+        alert(
+            "該当する情報は見つかりませんでした。"
+        );
+
+    }
+
+}
+
+
+/* =========================
+   Enterキー
+========================= */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    function(){
+
+        document
+        .getElementById("search")
+        .addEventListener(
+
+            "keydown",
+
+            function(event){
+
+                if(event.key === "Enter"){
+
+                    searchPage();
+
+                }
+
+            }
+
+        );
+
+    }
+
+);
+
+</script>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     固定検索欄
+========================= -->
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="検索ワード"
+    >
+
+    <button onclick="searchPage()">
+        検索
+    </button>
+
+</div>
+
+
+
+<div class="container">
+
+
+<h1>
+神の子
+</h1>
+
+<p class="subtitle">
+未公開音声記録 / AUDIO DATA / SATO SHO
+</p>
+
+
+
+<!-- =========================
+     記録情報
+========================= -->
+
+<div class="record-info">
+
+<strong>記録情報</strong>
+
+<br><br>
+
+記録者：
+<span>佐藤翔（新聞記者）</span>
+
+<br>
+
+記録場所：
+<span>鹵獲村周辺・山間部</span>
+
+<br>
+
+記録形式：
+<span>小型録音機による音声記録</span>
+
+<br>
+
+記録状態：
+<span>音声ノイズあり / 一部欠損</span>
+
+<br>
+
+重要度：
+<span>極めて高い</span>
+
+</div>
+
+
+
+<h2>
+音声記録
+</h2>
+
+
+<div class="audio-record">
+
+
+<p class="noise">
+（録音開始）
+</p>
+
+
+<p class="sato">
+
+佐藤「……録音されているな。」
+</p>
+
+
+<p class="sato">
+
+佐藤「今日の取材は、予定していたものではない。」
+</p>
+
+
+<p class="sato">
+
+佐藤「鹵獲村について調べている途中、
+山道から少し外れた場所で休憩していた。」
+</p>
+
+
+<p class="sato">
+
+佐藤「そのとき、下の方から人の声が聞こえた。」
+</p>
+
+
+<p class="sato">
+
+佐藤「村の人間だと思う。」
+</p>
+
+
+<p class="sato">
+
+佐藤「……誰かを連れている。」
+</p>
+
+
+<p class="noise">
+
+（遠くから複数人の話し声）
+</p>
+
+
+<p class="sato">
+
+佐藤「子供……？」
+</p>
+
+
+<p class="sato">
+
+佐藤「いや、あれは子供だ。」
+</p>
+
+
+<p class="sato">
+
+佐藤「どうしてこんな山の中に……」
+</p>
+
+
+<p class="noise">
+
+（足音）
+</p>
+
+
+<p class="village">
+
+村人A「急げ。」
+</p>
+
+
+<p class="village">
+
+村人B「日が暮れる前に着かせろ。」
+</p>
+
+
+<p class="village">
+
+村人A「今の子はもう長くない。」
+</p>
+
+
+<p class="village">
+
+村人B「分かっている。」
+</p>
+
+
+<p class="village">
+
+村人A「だから次が必要なんだ。」
+</p>
+
+
+<p class="sato">
+
+佐藤「……次？」
+</p>
+
+
+<p class="noise">
+
+（風の音）
+</p>
+
+
+<p class="village">
+
+村人B「今度の子なら大丈夫だろう。」
+</p>
+
+
+<p class="village">
+
+村人A「そうだといいがな。」
+</p>
+
+
+<p class="village">
+
+村人B「前の子も最初は何もなかった。」
+</p>
+
+
+<p class="village">
+
+村人A「それでも、何度も洞穴に入れば同じだ。」
+</p>
+
+
+<p class="sato">
+
+佐藤「……洞穴？」
+</p>
+
+
+<p class="village">
+
+村人B「勾玉が求めているんだ。」
+</p>
+
+
+<p class="village">
+
+村人A「神の子がいなければ、
+祈りを捧げることもできない。」
+</p>
+
+
+<p class="village">
+
+村人B「祈りを続ければ、未来を見ることができる。」
+</p>
+
+
+<p class="village">
+
+村人A「だが……」
+</p>
+
+
+<p class="noise">
+
+（長い沈黙）
+</p>
+
+
+<p class="village">
+
+村人A「使いすぎると、あの子の中に溜まる。」
+</p>
+
+
+<p class="sato">
+
+佐藤「……何が？」
+</p>
+
+
+<p class="village">
+
+村人B「邪気だ。」
+</p>
+
+
+<p class="village">
+
+村人A「何度も勾玉を使えば、
+身体も心もおかしくなる。」
+</p>
+
+
+<p class="village">
+
+村人B「最初は眠れなくなる。」
+</p>
+
+
+<p class="village">
+
+村人B「そのうち、人の声が聞こえるようになる。」
+</p>
+
+
+<p class="village">
+
+村人A「最後には、自分が誰なのかも分からなくなる。」
+</p>
+
+
+<p class="sato">
+
+佐藤「…………」
+</p>
+
+
+<div class="highlight">
+
+
+<p class="warning">
+
+村人A「だから、壊れる前に次を用意する。」
+</p>
+
+
+<p class="warning">
+
+村人B「今の子が使えなくなったら、
+新しい神の子に代える。」
+</p>
+
+
+<p class="warning">
+
+村人A「それが昔から決まっている。」
+</p>
+
+
+</div>
+
+
+<p class="sato">
+
+佐藤「……子供を……」
+</p>
+
+
+<p class="sato">
+
+佐藤「使い捨てにしているのか……？」
+</p>
+
+
+<p class="noise">
+
+（録音機が衣服に触れる音）
+</p>
+
+
+<p class="village">
+
+村人A「今回の子はどこから連れてきた？」
+</p>
+
+
+<p class="village">
+
+村人B「村の外だ。」
+</p>
+
+
+<p class="village">
+
+村人A「親は？」
+</p>
+
+
+<p class="village">
+
+村人B「探しているだろうな。」
+</p>
+
+
+<p class="village">
+
+村人A「……そうか。」
+</p>
+
+
+<p class="noise">
+
+（しばらく沈黙）
+</p>
+
+
+<p class="village">
+
+村人B「このことは誰にも話すな。」
+</p>
+
+
+<p class="village">
+
+村人A「分かっている。」
+</p>
+
+
+<p class="village">
+
+村人B「特に村の外の人間にはな。」
+</p>
+
+
+<p class="noise">
+
+（足音が遠ざかる）
+</p>
+
+
+<p class="sato">
+
+佐藤「……今の話が本当なら……」
+</p>
+
+
+<p class="sato">
+
+佐藤「神の子というのは、
+村の伝説なんかじゃない。」
+</p>
+
+
+<p class="sato">
+
+佐藤「実際に子供を連れてきて……」
+</p>
+
+
+<p class="sato">
+
+佐藤「勾玉を使わせている。」
+</p>
+
+
+<p class="sato">
+
+佐藤「そして、その子供が限界になると……」
+</p>
+
+
+<p class="sato">
+
+佐藤「また別の子供を連れてくる。」
+</p>
+
+
+<p class="noise">
+
+（長い沈黙）
+</p>
+
+
+<p class="sato">
+
+佐藤「……これは記録しておかなければならない。」
+</p>
+
+
+<p class="sato">
+
+佐藤「もしこの録音が残っていたら、
+誰かが真相を調べてくれるかもしれない。」
+</p>
+
+
+<p class="sato">
+
+佐藤「それに……」
+</p>
+
+
+<p class="sato">
+
+佐藤「今連れていかれた子供を、
+このままにしておくわけにはいかない。」
+</p>
+
+
+<p class="noise">
+
+（録音終了）
+</p>
+
+
+</div>
+
+
+
+<!-- =========================
+     調査による推測
+========================= -->
+
+<div class="analysis">
+
+
+<h2>
+記録から判明したこと
+</h2>
+
+
+<p>
+この音声記録から、
+鹵獲村では「神の子」と呼ばれる子供が
+実際に存在していた可能性が高い。
+</p>
+
+
+<p>
+また、村人の会話から、
+神の子には勾玉に祈りを捧げさせる役割が
+与えられていたことが分かる。
+</p>
+
+
+<p>
+しかし、勾玉を何度も使用すると、
+神の子の身体や精神に異常が現れる。
+</p>
+
+
+<p>
+村人たちはその状態を
+「邪気が溜まる」と表現している。
+</p>
+
+
+<p>
+そして、現在の神の子が
+勾玉を使えなくなる前に、
+新しい子供を用意する必要があると考えていた。
+</p>
+
+
+<div class="highlight">
+
+<strong>
+つまり、「神の子」が定期的に入れ替わっていた理由は、
+勾玉の使用による精神的な負担に耐えられなくなるためだった。
+</strong>
+
+</div>
+
+
+<p>
+さらに重要なのは、
+今回連れてこられた子供について
+「村の外から連れてきた」という発言があることである。
+</p>
+
+
+<p>
+これは、神の子が村の中で自然に選ばれる存在ではなく、
+村人によって外部から連れてこられていた可能性を示している。
+</p>
+
+
+<p>
+佐藤翔は、この事実を偶然録音していた。
+</p>
+
+
+</div>
+
+
+
+
+
+
+<footer>
+
+この物語はフィクションであり、
+実在する人物・団体・事件とは一切関係ありません。
+
+</footer>
+
+
+</div>
+
+</body>
+
+</html>
