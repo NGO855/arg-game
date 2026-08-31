@@ -2,52 +2,207 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+
 <title>建築工事請負契約書</title>
 
 <style>
+
 body{
-  font-family: "MS Mincho", serif;
-  line-height: 1.8;
-  margin: 40px;
+  font-family:"MS Mincho","Yu Mincho",serif;
+  background:#e9e9e9;
+  color:#222;
+  line-height:1.8;
+  margin:0;
+  padding:50px 20px;
 }
 
-h1{
-  text-align:center;
-}
-
-.contract{
-  max-width: 800px;
-  margin:auto;
-}
-
+/* 検索欄 */
 .search{
   position:fixed;
   top:10px;
-  right:10px;
+  right:15px;
+  z-index:1000;
+  background:white;
+  padding:8px;
+  border:1px solid #aaa;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
 }
 
+.search input{
+  width:180px;
+  padding:6px;
+  border:1px solid #999;
+}
+
+.search button{
+  padding:6px 12px;
+  cursor:pointer;
+}
+
+/* 契約書本体 */
+.contract{
+  max-width:850px;
+  margin:0 auto;
+  background:#fff;
+  padding:65px 75px;
+  box-shadow:0 0 12px rgba(0,0,0,0.2);
+  min-height:1100px;
+}
+
+/* 文書情報 */
+.document-info{
+  font-size:13px;
+  text-align:right;
+  margin-bottom:25px;
+}
+
+.document-title{
+  text-align:center;
+  margin-top:30px;
+  margin-bottom:45px;
+}
+
+.document-title h1{
+  font-size:28px;
+  letter-spacing:8px;
+  margin:0;
+}
+
+.document-title p{
+  font-size:13px;
+  margin-top:10px;
+}
+
+/* 前文 */
+.preamble{
+  text-indent:1em;
+  margin-bottom:30px;
+}
+
+/* 条文 */
 .section{
-  margin-top:20px;
+  margin-top:28px;
+}
+
+.section-title{
+  font-weight:bold;
+  margin-bottom:8px;
 }
 
 .article{
-  margin-left:20px;
+  margin-left:1.5em;
 }
+
+.article p{
+  margin:4px 0;
+}
+
+/* 表 */
+.info-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:15px 0 25px;
+  font-size:14px;
+}
+
+.info-table th,
+.info-table td{
+  border:1px solid #555;
+  padding:8px 10px;
+}
+
+.info-table th{
+  width:28%;
+  background:#f2f2f2;
+  text-align:left;
+}
+
+/* 注意書き */
+.note{
+  border:1px solid #888;
+  padding:15px;
+  margin:25px 0;
+  font-size:13px;
+  background:#fafafa;
+}
+
+/* 署名 */
+.signature{
+  margin-top:60px;
+}
+
+.signature-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+
+.signature-table td{
+  border:1px solid #555;
+  padding:14px;
+  height:55px;
+}
+
+.signature-table td:first-child{
+  width:28%;
+  background:#f2f2f2;
+}
+
+/* フッター */
+footer{
+  text-align:center;
+  color:#666;
+  font-size:12px;
+  margin:30px 0;
+}
+
+@media(max-width:700px){
+
+  body{
+    padding:70px 5px 20px;
+  }
+
+  .contract{
+    padding:35px 25px;
+  }
+
+  .search{
+    right:5px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- 検索 -->
+<!-- =========================
+     検索欄
+========================= -->
+
 <div class="search">
-  <input type="text" id="searchBox" placeholder="検索...">
+
+  <input
+    type="text"
+    id="searchBox"
+    placeholder="検索..."
+  >
+
   <button onclick="searchPage()">検索</button>
+
 </div>
 
+
 <script>
+
 function searchPage(){
-  const word = document.getElementById("searchBox").value;
+
+  const word =
+    document.getElementById("searchBox").value.trim();
+
   const map = {
+
     "建築工事請負契約書":"q83mx1.html",
     "二宮建設株式会社":"v5r8t2.html",
     "丘の下株式会社":"n94pk7.html",
@@ -59,126 +214,581 @@ function searchPage(){
     "佐藤翔":"h47wn8.html",
     "日記":"z35kq2.html",
     "神の子":"y76cf3.html"
+
   };
 
   if(map[word]){
+
     location.href = map[word];
-  } else {
+
+  }else{
+
     alert("該当する情報は見つかりませんでした");
+
   }
+
 }
+
+
+/* Enterキーでも検索できるようにする */
+
+document
+  .getElementById("searchBox")
+  .addEventListener("keydown",function(event){
+
+    if(event.key === "Enter"){
+      searchPage();
+    }
+
+  });
+
 </script>
 
+
+<!-- =========================
+     契約書
+========================= -->
+
 <div class="contract">
+
+
+<div class="document-info">
+
+文書番号：NKS-2024-0417<br>
+契約締結日：2024年4月17日<br>
+管理区分：工事関係書類
+
+</div>
+
+
+<div class="document-title">
 
 <h1>工事請負契約書</h1>
 
 <p>
-注文者 二宮株式会社（以下「注文者」という）と請負人 丘の下株式会社（以下「受注者」という）は、
-本契約書による工事請負契約を締結する。
+山間部テーマパーク開発工事
 </p>
 
-<div class="section">
-<b>第１条（工事の目的物等）</b><br>
-<div class="article">
-１ 工事内容<br>
-２ 工事の目的物：設計図及び仕様書のとおり<br>
-３ 工事場所<br>
-４ 工期：着手 年 月 日 ／ 完成 年 月 日<br>
-５ 施工しない日・時間帯<br>
-６ 引渡し：完成後 日以内<br>
-７ 請負代金額 金 万円<br>
-８ 契約保証金 金 万円
-</div>
 </div>
 
-<div class="section">
-<b>第２条（請負代金の支払方法）</b>
-<div class="article">
-分割払いとし、指定口座へ振込。<br>
-○年○月○日 金 万円<br>
-○年○月○日 金 万円
-</div>
-</div>
+
+<p class="preamble">
+
+二宮建設株式会社（以下「注文者」という。）と、
+丘の下株式会社（以下「受注者」という。）は、
+下記の工事について、建設工事請負契約を締結する。
+
+</p>
+
+
+<!-- 工事概要 -->
 
 <div class="section">
-<b>第３条（原材料の負担）</b>
-<div class="article">
-原材料費は受注者が負担する。
+
+<div class="section-title">
+第1条（工事の概要）
 </div>
+
+<table class="info-table">
+
+<tr>
+<th>工事名称</th>
+<td>
+山間部テーマパーク開発工事
+</td>
+</tr>
+
+<tr>
+<th>工事場所</th>
+<td>
+〇〇県北部山間地域
+鹵獲村・波風村・吉祥村周辺
+</td>
+</tr>
+
+<tr>
+<th>工事内容</th>
+<td>
+敷地造成、進入道路整備、施設建設、
+地盤整備および関連インフラ工事
+</td>
+</tr>
+
+<tr>
+<th>敷地面積</th>
+<td>
+約184,000㎡
+</td>
+</tr>
+
+<tr>
+<th>予定施設面積</th>
+<td>
+約32,500㎡
+</td>
+</tr>
+
+<tr>
+<th>工期</th>
+<td>
+2024年5月1日から
+2026年3月31日まで
+</td>
+</tr>
+
+<tr>
+<th>請負代金</th>
+<td>
+金12億8,400万円
+（税込）
+</td>
+</tr>
+
+</table>
+
 </div>
+
+
+<!-- 第2条 -->
 
 <div class="section">
-<b>第４条（引渡し及び検査）</b>
-<div class="article">
-引渡し後に検査を実施し、所有権は通知時点で移転する。
-</div>
+
+<div class="section-title">
+第2条（工事の目的物）
 </div>
 
-<div class="section">
-<b>第５条（契約不適合責任）</b>
 <div class="article">
-不適合があった場合、補修または損害賠償で対応する。
-</div>
-</div>
-
-<div class="section">
-<b>第６条（危険負担）</b>
-<div class="article">
-所有権移転前の損害は受注者が負担する。
-</div>
-</div>
-
-<div class="section">
-<b>第７条（不可抗力）</b>
-<div class="article">
-自然災害・戦争等による遅延は責任を負わない。
-</div>
-</div>
-
-<div class="section">
-<b>第８条（工期の変更）</b>
-<div class="article">
-不可抗力等の場合、協議により工期変更。
-</div>
-</div>
-
-<div class="section">
-<b>第９条（工事の中止・変更）</b>
-<div class="article">
-注文者は工事変更・中止が可能。
-</div>
-</div>
-
-<div class="section">
-<b>第１０条（損害賠償）</b>
-<div class="article">
-契約違反時は損害賠償責任を負う。
-</div>
-</div>
-
-<div class="section">
-<b>第１５条（契約の解除）</b>
-<div class="article">
-重大違反等の場合、即時解除可能。
-</div>
-</div>
-
-<br><br>
 
 <p>
-以上、本契約の証として本書を作成する。
+本工事における目的物は、設計図書、仕様書、
+その他注文者が交付する関連資料に基づき施工された
+建築物、造成施設、道路その他付帯設備一式とする。
 </p>
 
 <p>
-注文者：住所・氏名<br>
-受注者：住所・氏名
+完成した目的物は、完成検査および注文者による
+引渡し確認を経て注文者に引き渡すものとする。
 </p>
 
 </div>
 
-<footer style="margin-top:50px; font-size:12px;">
-この文書はフィクションです
+</div>
+
+
+<!-- 第3条 -->
+
+<div class="section">
+
+<div class="section-title">
+第3条（請負代金および支払方法）
+</div>
+
+<div class="article">
+
+<p>
+請負代金は、総額金12億8,400万円とする。
+</p>
+
+<p>
+支払方法は以下のとおりとする。
+</p>
+
+<p>
+① 契約締結時　金1億2,840万円<br>
+② 工事着手時　金2億5,680万円<br>
+③ 工事進捗率50％到達時　金3億8,520万円<br>
+④ 上棟・主要構造物完成時　金2億5,680万円<br>
+⑤ 完成検査終了時　金1億9,260万円<br>
+⑥ 引渡し完了時　金6,420万円
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第4条 -->
+
+<div class="section">
+
+<div class="section-title">
+第4条（工事場所への立入り）
+</div>
+
+<div class="article">
+
+<p>
+受注者は、工事期間中、工事関係者以外の者が
+施工区域内へ立ち入らないよう必要な措置を講じる。
+</p>
+
+<p>
+また、工事区域周辺に居住する住民等への安全確保に
+十分配慮するものとする。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第5条 -->
+
+<div class="section">
+
+<div class="section-title">
+第5条（原材料および機材）
+</div>
+
+<div class="article">
+
+<p>
+工事に必要となる原材料、建設機械、仮設設備その他
+施工に必要な機材は、特段の定めがある場合を除き、
+受注者が調達するものとする。
+</p>
+
+<p>
+大型重機その他特殊機材の搬入については、
+事前に注文者へ報告するものとする。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第6条 -->
+
+<div class="section">
+
+<div class="section-title">
+第6条（発破作業）
+</div>
+
+<div class="article">
+
+<p>
+施工区域内において地盤の掘削その他施工上必要と
+認められる場合には、関係法令に従い発破作業を
+実施することができる。
+</p>
+
+<p>
+発破作業を実施する場合、受注者は周辺地域への
+安全対策を講じ、必要な許認可を取得するものとする。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第7条 -->
+
+<div class="section">
+
+<div class="section-title">
+第7条（工期の変更）
+</div>
+
+<div class="article">
+
+<p>
+天候、自然災害、行政上の手続きその他やむを得ない
+事情により工事の継続が困難となった場合、
+注文者と受注者は協議のうえ工期を変更することができる。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第8条 -->
+
+<div class="section">
+
+<div class="section-title">
+第8条（安全管理）
+</div>
+
+<div class="article">
+
+<p>
+受注者は、工事現場における労働者の安全を確保し、
+事故防止のため必要な措置を講じなければならない。
+</p>
+
+<p>
+特に山間部における工事であることを考慮し、
+落石、土砂災害、急傾斜地その他の危険について
+十分な安全管理を行うものとする。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第9条 -->
+
+<div class="section">
+
+<div class="section-title">
+第9条（環境への配慮）
+</div>
+
+<div class="article">
+
+<p>
+受注者は、工事に伴う騒音、振動、粉じん、
+河川および周辺森林への影響を可能な限り抑制する。
+</p>
+
+<p>
+周辺住民から苦情等があった場合には、
+速やかに注文者へ報告し、必要な対応を行うものとする。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第10条 -->
+
+<div class="section">
+
+<div class="section-title">
+第10条（完成検査）
+</div>
+
+<div class="article">
+
+<p>
+受注者は工事完成後、注文者に完成通知を行う。
+注文者は通知を受領した日から10日以内に
+完成検査を実施するものとする。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第11条 -->
+
+<div class="section">
+
+<div class="section-title">
+第11条（引渡し）
+</div>
+
+<div class="article">
+
+<p>
+完成検査に合格した場合、受注者は速やかに
+目的物を注文者へ引き渡すものとする。
+</p>
+
+<p>
+引渡し予定日は2026年3月31日とする。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第12条 -->
+
+<div class="section">
+
+<div class="section-title">
+第12条（契約不適合責任）
+</div>
+
+<div class="article">
+
+<p>
+引渡し後に契約内容と適合しない箇所が確認された場合、
+受注者は注文者からの通知に基づき、
+必要な補修その他の対応を行うものとする。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第13条 -->
+
+<div class="section">
+
+<div class="section-title">
+第13条（秘密保持）
+</div>
+
+<div class="article">
+
+<p>
+注文者および受注者は、本工事に関連して知り得た
+技術上、営業上その他の非公開情報を、
+相手方の承諾なく第三者へ開示してはならない。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第14条 -->
+
+<div class="section">
+
+<div class="section-title">
+第14条（再委託）
+</div>
+
+<div class="article">
+
+<p>
+受注者は、工事の一部を第三者へ再委託する場合、
+あらかじめ注文者の承諾を得るものとする。
+</p>
+
+<p>
+ただし、一般的な資材搬入、運搬、警備その他
+補助的業務についてはこの限りではない。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第15条 -->
+
+<div class="section">
+
+<div class="section-title">
+第15条（契約の解除）
+</div>
+
+<div class="article">
+
+<p>
+注文者または受注者が本契約に重大な違反をした場合、
+相手方は相当の期間を定めて是正を求めることができる。
+</p>
+
+<p>
+期間内に是正されない場合には、本契約を解除することができる。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 第16条 -->
+
+<div class="section">
+
+<div class="section-title">
+第16条（協議事項）
+</div>
+
+<div class="article">
+
+<p>
+本契約に定めのない事項または本契約の解釈について
+疑義が生じた場合には、注文者と受注者が誠意をもって
+協議し、解決するものとする。
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 備考 -->
+
+<div class="note">
+
+<strong>【工事管理上の注意】</strong><br><br>
+
+1. 工事区域への無関係者の立入りを禁止する。<br>
+
+2. 山間部の地形変化について定期的に記録を行う。<br>
+
+3. 発破作業を行う場合は周辺への安全確認を徹底する。<br>
+
+4. 工事区域内で確認された既存構造物については、
+   所定の担当者へ報告すること。<br>
+
+5. 工事関係資料の外部への持ち出しについては、
+   会社規定に従うこと。
+
+</div>
+
+
+<!-- 契約締結 -->
+
+<div class="signature">
+
+<p>
+以上、本契約締結の証として本書2通を作成し、
+注文者および受注者が記名押印のうえ、
+各1通を保有する。
+</p>
+
+
+<table class="signature-table">
+
+<tr>
+<td>契約締結日</td>
+<td>2024年4月17日</td>
+</tr>
+
+<tr>
+<td>注文者</td>
+<td>
+二宮建設株式会社<br>
+代表取締役社長　二宮 琥太郎
+</td>
+</tr>
+
+<tr>
+<td>受注者</td>
+<td>
+丘の下株式会社<br>
+代表取締役　涼宮 達郎
+</td>
+</tr>
+
+<tr>
+<td>工事管理責任者</td>
+<td>
+二宮建設株式会社　開発事業部<br>
+担当：開発管理課
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+この文書はARG（代替現実ゲーム）のために制作された
+架空の資料です。実在する企業・団体・人物とは関係ありません。
+
 </footer>
 
 </body>
